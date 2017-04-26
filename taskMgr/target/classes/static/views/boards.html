@@ -1,0 +1,53 @@
+<div class="wrap" ng-controller="BoardController">
+	<div class="box" style="margin-top: 30px;">
+		<div class="boards-page-board-section mod-no-sidebar">
+			<div class="boards-page-board-section-header">
+				<div class="boards-page-board-section-header-icon"><span class="icon-lg icon-member"></span></div>
+				<h3 class="boards-page-board-section-header-name">我的白板</h3></div>
+			<ul class="boards-page-board-section-list">
+				<li ng-repeat="item in boards" class="boards-page-board-section-list-item">
+					<a class="board-tile" href="javascript:;" ng-click="toJobBoxs(item.boardId)" style="background-color: rgb(0, 174, 204);">
+						<span class="board-tile-fade"></span>
+						<!-- <span class="board-tile-options" onclick="javascript:alert('删除');">
+							<span title="删除" 
+								class=" icon-sm icon-close"></span>
+						</span> -->
+						<span class="board-tile-details is-badged">
+						<span title="练习板" dir="auto" class="board-tile-details-name" ng-bind="item.boardName">练习板</span></span>
+
+						<span class="board-tile-badges"></span></a>
+					<div class="board-tags u-clearfix"></div>
+				</li>
+				<li class="boards-page-board-section-list-item">
+
+						<a class="board-tile mod-add" href="javascript:;" ng-click="showPop()"><span>创建白板…</span></a>
+				</li>
+			</ul>
+		</div>
+	</div>
+
+
+	<div class="pop-over is-shown" ng-show="isShow" style="left: 440px; top: 264px;">
+		<div data-reactroot="">
+			<div class="pop-over-header js-pop-over-header"><span class="pop-over-header-title">创建白板</span>
+				<a href="javascript:;" ng-click="closePop()" class="pop-over-header-close-btn icon-sm icon-close"></a>
+			</div>
+			<div>
+				<div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="max-height: 284px;">
+					<div>
+						<div>
+							<label for="boardNewTitle">标题</label>
+							<input id="boardNewTitle" class="non-empty js-autofocus" type="text" 
+							ng-model="board.boardName" placeholder="标题" value="" dir="auto">
+	
+								<p class="error u-bottom js-no-valid-org-privs u-clearfix hide"></p>
+								<input class="primary wide js-submit" ng-click="save()" type="button" value="创建">
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+</div>
+		

@@ -1,0 +1,18 @@
+<div class="loginWrap" ng-controller="LoginController">
+	<div style="font-size: 26px; font-weight: bold;">任务管理系统</div>
+	<div class="loginIn clearfix" style="border: 1px solid silver;" ng-keypress="loginKeyPress($event)">
+		<div class="login">
+			<h2>登录系统</h2>
+			<ul>
+				<li><label for="">账号</label><input ng-model="query.username" type="text" /></li>
+				<li><label for="">密码</label><input ng-model="query.password" type="password" /></li>
+				<li ng-if="loginErr"><span style=" text-align:center; display:block; color: red;">账号或密码错误！</span></li>
+			</ul>
+
+			<div class="loginBtnBox">
+				<span class="right">
+				<input type="button" value="登 录" ng-click="login()"  ng-disabled ="query.username == ''" class="loginBtn"/></span>
+			</div>
+		</div>
+	</div>
+</div>

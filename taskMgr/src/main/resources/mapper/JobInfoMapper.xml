@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hk.task.mapper.JobInfoMapper">
+	<resultMap id="BaseResultMap" type="com.hk.task.model.JobInfo">
+		<!-- WARNING - @mbg.generated -->
+		<id column="job_id" property="jobId" jdbcType="VARCHAR" />
+		<result column="job_title" property="jobTitle" jdbcType="VARCHAR" />
+		<result column="job_desc" property="jobDesc" jdbcType="VARCHAR" />
+		<result column="job_color" property="jobColor" jdbcType="VARCHAR" />
+		<result column="job_end_date" property="jobEndDate" jdbcType="DATE" />
+		<result column="job_sort" property="jobSort" jdbcType="INTEGER" />
+		<result column="list_id" property="listId" jdbcType="VARCHAR" />
+	</resultMap>
+
+	<sql id="Base_Column_List">
+		job_id, job_title, job_desc, job_color, job_end_date,job_sort,
+		list_id
+	</sql>
+
+	<select id="selectJobsByListId" parameterType="java.lang.String"
+		resultMap="BaseResultMap">
+		select
+		<include refid="Base_Column_List"></include>
+		from job_info
+		<where>
+			list_id = #{listId}
+			order by job_sort
+		</where>
+
+	</select>
+	
+	<select id="selectMaxSortValue" resultType="INTEGER">
+		select
+		case when max(job_sort) is null then 0 else max(job_sort) end
+		from job_info
+		<where>
+			list_id = #{listId}
+		</where>
+
+	</select>
+	
+	<update id="updateSortById">
+		update job_info
+		set job_sort = #{sortValue}, list_id = #{listId}
+		where job_id = #{jobId}
+	</update>
+	
+	<update id="updateSortsBySortValue">
+		update job_info
+		set job_sort = job_sort + 1
+		where job_sort >= #{sortValue} and list_id = #{listId}
+	</update>
+	
+	<update id="updateSortsById">
+		update job_info
+		set job_sort = job_sort -1
+		where job_sort > #{jobSort} and list_id=#{listId}
+	</update>
+
+
+</mapper>

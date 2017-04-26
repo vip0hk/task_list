@@ -1,0 +1,344 @@
+<div class="wrap" ng-controller="JobBoxController">
+	<div class="box" style="margin-top: 30px;">
+
+		<!-- 里面可拖拽 -->
+		<div style="width: 2000px;" sv-root sv-on-sort="onSorted($item, $partFrom, $partTo, $indexFrom, $indexTo)" 
+		sv-on-start="onStarted($index, $item, $helper, $part)">
+
+			<!--第一列-->
+			<div class="js-list list-wrapper" ng-repeat="jobBox in jobBoxs">
+				<div class="list js-list-content">
+					<!-- 标题-->
+					<div class="list-header js-list-header u-clearfix is-menu-shown">
+						<div class="list-header-target js-editing-target"></div>
+						<h2 class="list-header-name-assist js-list-name-assist" ng-bind="jobBox.listTitle">卡片列表</h2>
+						<textarea class="list-header-name mod-list-name js-list-name-input" spellcheck="false"  maxlength="512" 
+						style="overflow: hidden; word-wrap: break-word; height: 24px;" ng-model="jobBox.listTitle">卡片列表</textarea>
+						<p class="list-header-num-cards hide js-num-cards">总共3条</p>
+						<div class="list-header-extras">
+							<!--右上角操作按钮-->
+							<a class="list-header-extras-menu dark-hover hide " href="javascript:alert(1)">
+							<span class="icon-sm icon-overflow-menu-horizontal"></span></a>
+						</div>
+					</div>
+
+					<!-- 卡片列表-->
+					<div sv-part="jobBox.jobs" class="list-cards u-fancy-scrollbar u-clearfix ">
+
+						<!--工作卡片-->
+						<div class="list-card" ng-repeat="item in jobBox.jobs" sv-element>
+						{{item.jobSort}}
+							<div class="list-card-details">
+							<a class="list-card-title js-card-name" dir="auto" href="javascript:;" ng-click="showEditWin(item)" >
+									<span class="card-short-id hide">#7</span><h3>{{item.jobTitle}}</h3></a>
+									
+								<!-- <div class="list-card-labels js-card-labels"><span class="card-label card-label-green mod-card-front"></span>
+									<span class="card-label card-label-yellow mod-card-front">&nbsp;</span>
+									<span class="card-label card-label-red mod-card-front">&nbsp;</span>
+									<span class="card-label card-label-purple mod-card-front">&nbsp;</span></div> -->
+								<a class="list-card-title js-card-name" dir="auto" href="javascript:;" ng-click="showEditWin(item)" >
+									<span class="card-short-id hide">#7</span>{{item.jobDesc}}</a>
+								<!-- <div class="badges"><span class="js-badges"><div class="badge is-due-complete" title="已完成.">
+							<span class="badge-icon icon-sm icon-clock"></span><span class="badge-text">31 Mar</span></div>
+								<div class="badge is-icon-only" title="含有详细描述."><span class="badge-icon icon-sm icon-description"></span></div>
+								</span><span class="js-plugin-badges"><span></span></span>
+							</div> -->
+							<div class="list-card-members js-list-card-members"></div>
+						</div>
+					</div>
+					<!--/工作卡片-->
+
+				</div>
+				<a class="open-card-composer js-open-card-composer" href="javascript:;" ng-click="showNewWin(jobBox.listId)">添加新卡片...</a>
+			</div>
+		</div>
+
+		<!-- 创建新列表 -->
+		<div class="js-add-list list-wrapper mod-add is-idle">
+			<span class="placeholder js-open-add-list">创建列表…</span>
+			<input type="text" ng-model="jobBox.listTitle" placeholder="名称…" autocomplete="off" maxlength="512">
+			<div class="u-clearfix">
+				<input class="primary mod-list-add-button js-save-edit" type="button" ng-click="saveList()" value="保存">
+				<a class="icon-lg icon-close dark-hover js-cancel-edit" href="javascript:;"></a>
+			</div>
+		</div>
+
+    </div>
+  </div>
+
+
+
+
+<!-- 添加、修改 -->
+<div class="window-overlay" ng-show="isShowWin" style="display: block;margin: auto;">
+	<div class="window" style="width:500px; height:400px; display: block;margin:0 auto;">
+		<a class="focus-dummy" href="#"></a>
+		<div class="window-wrapper js-tab-parent">
+			<a class="icon-lg icon-close dialog-close-button js-close-window" href="javascript:" ng-click="closeWin()"></a>
+			<div class="card-detail-window u-clearfix">
+
+				<div class="window-header"><span class="window-header-icon icon-lg icon-card"></span>
+					<div class="window-title">
+						<h2 class="card-detail-title-assist js-title-helper" >这是我的工作主题</h2>
+						<textarea class="mod-card-back-title js-card-detail-title-input" 
+						style="overflow: hidden; word-wrap: break-word; height: 30px;" ng-model="newJob.jobTitle">这是我的工作主题</textarea>
+
+					</div>
+					<div class="window-header-inline-content hide js-subscribed-indicator-header">
+						<span class="icon-sm icon-subscribe"></span></div>
+				</div>
+				<!--内容编辑-->
+				<div class="window-main-col" style="width: 324px;">
+					<div class="card-detail-data u-gutter">
+						
+						<!--标签设置-->
+						<!-- <div class="card-detail-item card-detail-item-block card-detail-item-labels u-clearfix js-card-detail-labels">
+							<h3 class="card-detail-item-header">标签</h3>
+							<div class="u-clearfix js-card-detail-labels-list js-edit-label">
+								<span class="card-label card-label-yellow mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-red mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-purple mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-yellow mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-red mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-purple mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-yellow mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-red mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<span class="card-label card-label-purple mod-card-detail mod-clickable" title="">&nbsp;</span>
+								<a class="card-detail-item-add-button dark-hover js-details-edit-labels">
+									<span class="icon-sm icon-add"></span></a>
+							</div>
+						</div> -->
+
+						<!--到期时间设置-->
+						<!-- <div class="card-detail-item js-card-detail-due-date">
+							<h3 class="card-detail-item-header">到期时间</h3>
+							<span class="card-detail-badge card-detail-due-date-badge js-card-detail-due-date-badge is-due-complete is-clickable" title="任务完成.">
+								<span class="card-detail-badge-due-date-complete-box js-card-detail-due-date-badge-complete js-details-toggle-due-date-complete">
+									<span class="icon-sm icon-check card-detail-badge-due-date-complete-icon"></span></span>
+							<span class="js-date-text card-detail-due-date-text js-details-edit-due-date">4月 5号 12:00</span></span>
+						</div> -->
+
+						<!--编辑内容-->
+						<div class="card-detail-item card-detail-item-block u-clearfix editable" attr="desc">
+							<!-- <h3 class="card-detail-item-header js-show-with-desc">工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述</h3> -->
+							<!-- <a class="card-detail-item-header-edit hide-on-edit js-show-with-desc js-edit-desc" href="#">[编辑]</a> -->
+							<textarea ng-model="newJob.jobDesc" style="width:290px; height:140px" >工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述工作描述</textarea>
+							
+							<div class="description-content js-desc-content">
+								<div class="description-content-fade-button">
+									<span class="description-content-fade-button-text">显示全部的工作内容.</span></div>
+								<!-- <div class="current markeddown hide-on-edit js-card-desc js-show-with-desc" dir="auto">
+									<p>没有名字啊</p>
+								</div> -->
+								<p class="u-bottom">
+									<a class="quiet-button mod-with-image hide-on-edit js-edit-desc js-hide-with-desc " href="javascript:;"
+									ng-click="saveJob()">
+									<span class="icon-sm icon-description quiet-button-icon"></span>&nbsp;调整内容…</a>
+								</p>
+								<!-- <div class="card-detail-edit edit">
+									<a class="helper js-format-help" href="#">Formatting help</a>
+									<textarea >wertyuiop2345678902345678901234567</textarea>
+									</div> -->
+								<p class="edits-warning quiet">你有编辑未保存.
+									<a class="js-view-edits" href="#">查看编辑内容</a> -
+									<a class="js-discard-edits" href="#">关闭</a>
+								</p>
+								<p class="edits-error error">编辑未保存哦.</p>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+							<!--右边工具栏-->
+							<!-- <div class="window-sidebar">
+								<div class="window-module u-clearfix">
+									<h3>工具栏</h3>
+									<div class="u-clearfix">
+										<a class="button-link js-edit-labels" href="#"><span class="icon-sm icon-label"></span>&nbsp;标签</a>
+										<a class="button-link js-add-due-date" href="#"><span class="icon-sm icon-clock"></span>&nbsp;到期时间</a>
+									</div>
+								</div>
+							</div> -->
+
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--标签设置-->
+			<div class="pop-over is-shown" ng-show="isShowLabel" style="left: 776px; top: 114px;">
+				<div data-reactroot="">
+					<div class="pop-over-header js-pop-over-header"><span class="pop-over-header-title">标签</span>
+						<a href="javascript:alert('关闭弹窗')" class="pop-over-header-close-btn icon-sm icon-close"></a>
+					</div>
+					<div>
+						<div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="height: 234px;">
+							<div>
+								<div>
+									<ul class="edit-labels-pop-over js-labels-list">
+										<li>
+											<span class="card-label mod-selectable card-label-green  js-select-label selected" data-idlabel="58b444d510fbc50643e8000f" data-color="green"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+										<li>
+											</a><span class="card-label mod-selectable card-label-yellow  js-select-label" data-idlabel="58b444d510fbc50643e80056" data-color="yellow"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+										<li>
+											</a><span class="card-label mod-selectable card-label-orange  js-select-label" data-idlabel="58b444d510fbc50643e80057" data-color="orange"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+										<li>
+											<span class="card-label mod-selectable card-label-red  js-select-label" data-idlabel="58b444d510fbc50643e80058" data-color="red"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+										<li>
+											<span class="card-label mod-selectable card-label-purple  js-select-label" data-idlabel="58b444d510fbc50643e8005a" data-color="purple"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+										<li>
+											<span class="card-label mod-selectable card-label-blue  js-select-label" data-idlabel="58b444d510fbc50643e8005b" data-color="blue"><span class="icon-sm icon-check card-label-selectable-icon light"></span></span>
+										</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+
+			<!--日期设置-->
+			<div class="pop-over is-shown" ng-show="isShowDate" style="left: 776px; top: 154px;">
+				<div data-reactroot="">
+					<div class="pop-over-header js-pop-over-header"><span class="pop-over-header-title">更新时间</span>
+						<a href="javascript:alert('关闭弹窗2')" class="pop-over-header-close-btn icon-sm icon-close"></a>
+					</div>
+					<div>
+						<div class="pop-over-content js-pop-over-content u-fancy-scrollbar js-tab-parent" style="max-height: 221px;">
+							<div>
+								<form class="dpicker-widget u-clearfix">
+									<div class="datepicker-select u-clearfix">
+										<div class="datepicker-select-date"><label class="datepicker-select-label">日期<input class="datepicker-select-input js-dpicker-date-input js-autofocus" type="text" placeholder="日期" tabindex="101"></label></div>
+										<div class="datepicker-select-time"><label class="datepicker-select-label">时间<input class="datepicker-select-input js-dpicker-time-input" type="text" placeholder="时间" tabindex="102"></label></div>
+									</div>
+									<div class="pickers js-dpicker-cal">
+										<div class="pika-single">
+											<div class="pika-lendar">
+												<div class="pika-title">
+													<!--月 -->
+													<div class="pika-label">四月
+														<select class="pika-select pika-select-month" tabindex="-1">
+															<option value="0">一月</option>
+															<option value="1">二月</option>
+															<option value="2">三月</option>
+															<option value="3" selected="">四月</option>
+															<option value="4">五月</option>
+															<option value="5">六月</option>
+															<option value="6">七月</option>
+															<option value="7">八月</option>
+															<option value="8">九月</option>
+															<option value="9">十月</option>
+															<option value="10">十一月</option>
+															<option value="11">十二月</option>
+														</select>
+													</div>
+													<!--年 -->
+													<div class="pika-label">2017
+														<select class="pika-select pika-select-year" tabindex="-1">
+															<option value="2007">2007</option>
+															<option value="2008">2008</option>
+															<option value="2009">2009</option>
+															<option value="2010">2010</option>
+															<option value="2011">2011</option>
+															<option value="2012">2012</option>
+															<option value="2013">2013</option>
+															<option value="2014">2014</option>
+															<option value="2015">2015</option>
+															<option value="2016">2016</option>
+															<option value="2017" selected="">2017</option>
+															<option value="2018">2018</option>
+															<option value="2019">2019</option>
+															<option value="2020">2020</option>
+															<option value="2021">2021</option>
+															<option value="2022">2022</option>
+															<option value="2023">2023</option>
+															<option value="2024">2024</option>
+															<option value="2025">2025</option>
+															<option value="2026">2026</option>
+															<option value="2027">2027</option>
+														</select>
+													</div>
+													<!--日期，时间显示，前月，后月-->
+													<button class="pika-prev" type="button">前一月</button><button class="pika-next" type="button">后一月</button></div>
+
+												<!-- 日历表格-->
+												<table cellpadding="0" cellspacing="0" class="pika-table">
+													<thead>
+														<tr>
+															<th scope="col"><abbr title="Monday">一</abbr></th>
+															<th scope="col"><abbr title="Tuesday">二</abbr></th>
+															<th scope="col"><abbr title="Wednesday">三</abbr></th>
+															<th scope="col"><abbr title="Thursday">四</abbr></th>
+															<th scope="col"><abbr title="Friday">五</abbr></th>
+															<th scope="col"><abbr title="Saturday">六</abbr></th>
+															<th scope="col"><abbr title="Sunday">日</abbr></th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr>
+															<td class="is-empty"></td>
+															<td class="is-empty"></td>
+															<td data-day="1" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="1">1</button></td>
+															<td data-day="2" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="2">2</button></td>
+															<td data-day="3" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="3">3</button></td>
+															<td data-day="4" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="4">4</button></td>
+															<td data-day="5" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="5">5</button></td>
+														</tr>
+														<tr>
+															<td data-day="6" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="6">6</button></td>
+															<td data-day="7" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="7">7</button></td>
+															<td data-day="8" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="8">8</button></td>
+															<td data-day="9" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="9">9</button></td>
+															<td data-day="10" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="10">10</button></td>
+															<td data-day="11" class="is-today"><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="11">11</button></td>
+															<td data-day="12" class="is-selected"><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="12">12</button></td>
+														</tr>
+														<tr>
+															<td data-day="13" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="13">13</button></td>
+															<td data-day="14" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="14">14</button></td>
+															<td data-day="15" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="15">15</button></td>
+															<td data-day="16" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="16">16</button></td>
+															<td data-day="17" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="17">17</button></td>
+															<td data-day="18" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="18">18</button></td>
+															<td data-day="19" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="19">19</button></td>
+														</tr>
+														<tr>
+															<td data-day="20" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="20">20</button></td>
+															<td data-day="21" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="21">21</button></td>
+															<td data-day="22" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="22">22</button></td>
+															<td data-day="23" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="23">23</button></td>
+															<td data-day="24" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="24">24</button></td>
+															<td data-day="25" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="25">25</button></td>
+															<td data-day="26" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="26">26</button></td>
+														</tr>
+														<tr>
+															<td data-day="27" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="27">27</button></td>
+															<td data-day="28" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="28">28</button></td>
+															<td data-day="29" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="29">29</button></td>
+															<td data-day="30" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="30">30</button></td>
+															<td data-day="31" class=""><button class="pika-button pika-day" type="button" data-pika-year="2017" data-pika-month="2" data-pika-day="31">31</button></td>
+															<td class="is-empty"></td>
+															<td class="is-empty"></td>
+														</tr>
+													</tbody>
+												</table>
+											</div>
+										</div>
+									</div>
+									<div class="datepicker-confirm-btns">
+										<input class="primary wide confirm" type="submit" value="确定" tabindex="103">
+										<button class="negate remove-date js-remove-date" type="button" tabindex="104">清空</button></div>
+
+								</form>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+</div>

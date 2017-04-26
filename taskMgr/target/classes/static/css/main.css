@@ -1,0 +1,77 @@
+body,div,p,h1,h2,h3,ul,li,dl,dt,dd{margin:0;padding:0;}
+body{font:normal 14px 'microsoft yahei';}
+ul{list-style: none;}em,i{font-style: normal;}.mtop10{margin-top: 10px}
+body,html{height: 100%}input,button{font-family: 'microsoft yahei'}
+.clearfix:after {content: "."; display: block; height: 0; clear: both; visibility: hidden}
+.clearfix {*zoom: 1;}.right{float: right;}.red{color: red}.blue{color: blue}.grey{color: #888}.green{color: #4da422}
+.loginWrap{width: 520px;margin:0 auto;padding:30px 0 0;}
+.loginIn{position: relative;height:336px;margin-top: 30px}
+.loginL{float: left;width: 780px;}
+.loginNav{width: 280px;float: left;}
+.loginNav li{border-bottom: 1px solid #31394a;height: 138px;line-height: 138px;text-align: center;font-size: 18px;color: #8f8f8f;position:relative;cursor: pointer;}
+.loginNav li:last-child{border-bottom: none}
+.loginNav li.hover{background: url(../images/transpBg2.png);color: #fff}
+.loginNav li.hover i{position:absolute;right:0;top:57px;display: block;width: 0;height: 0;border:12px solid transparent;border-right-color: #fff;}
+.login{float: left;width:440px;background: #fff;height: 300px;color: #666;padding:15px 30px;}
+.login h2{border-bottom: 1px solid #dfdfdf;font-size:20px;font-weight: normal;padding-bottom: 10px;margin-bottom: 20px}
+.login li{padding:7px 0;position: relative;}
+.login li label{display: inline-block;text-align: right;width: 70px;margin-right: 20px}
+.login li input{background: #fff;border:1px solid #d8d8d8;padding:8px;border-radius:3px;height: 25px;line-height: 25px;width: 300px}
+.verify{position: absolute;right: 32px;top: 9px;width: 150px;}
+.verify img{display: inline-block;width:100px;height:40px;}
+a.refresh{display: inline-block;width: 49px;height: 40px;background: url(../images/refresh.png) no-repeat 5px 10px;vertical-align: top;border-left: 1px solid #ccc}
+a.refresh:hover{background-position:5px -22px}
+.remember{padding:5px 32px 0 90px}
+.remember a{color:#524a08;text-decoration: underline;}
+.rembBox label{display: inline-block;font:normal 13px 'microsoft yahei';}
+.rembBox input{margin: -3px 2px 0 0;overflow: hidden;vertical-align: middle}
+.loginBtn{background: #4DA422;padding:10px 60px;color: #fff;font-size: 16px;font-weight: bold;border: 0;vertical-align: middle;cursor: pointer;}
+.loginBtn:hover{background: #0094AE }
+.loginBtnBox{padding: 25px 32px 0 30px;line-height: 50px}
+.loginBtnBox .loginBtn{vertical-align: top}
+.loginBtnBox a{color: #065ab0;text-decoration: underline;}
+.loginR{float: right;color: #fff;width:135px;overflow: hidden;}
+.loginR{margin:30px 41px 0 0;}
+.loginR img{vertical-align: middle;}
+.loginR p{margin:5px 0 15px;}
+.loginFooter{color: #fff;opacity: 0.5;filter:Alpha(opacity=50);clear: both;padding-top: 30px}
+
+
+.top{background: url(../images/topBg.gif);border-bottom: 1px solid #d2d2d2;height: 40px;padding-top: 10px}
+.topIn{background: url(../images/logo.png) no-repeat;background-size:background-size: 50% auto;padding-left:100px;font:bold 23px 'microsoft yahei';color: #494949;padding-top: 0px;height: 30px;width: 1000px;margin:0 auto;}
+.topIn span{font-weight: normal;display: inline-block;border-left: 1px solid #c4c4c4;padding-left: 20px;margin-left: 20px}
+.wrap{width:1200px;margin:0 auto;}
+.box{border: 1px solid #dcdcdc;padding:30px; width: 100%; height: 430px; overflow-x: auto;}
+h2.title{font-size: 25px;font-weight:normal;color: #6a6a6a}
+.boxIn{width: 380px;margin:50px auto;}
+.addForm li{padding:15px 0;position: relative;}
+.addForm li span.grey{position: absolute;left:390px;top:29px;width: 300px}
+.addForm li input{border: 1px solid #d9d9d9;background: #fff;height: 45px;line-height: 45px;padding:0 10px;width: 360px;border-radius: 3px}
+.addForm li .verify{right: 0;top: 17px}
+.addForm li .verify img{height: 44px}
+.addForm li .verify .refresh{height: 44px}
+.addForm li .greyBtn{position: absolute;right: 2px;top:19px;padding:5px 10px;line-height: 29px}
+.btnBox{text-align: center;margin-top: 30px}
+.footer{background: #0f0f0f;text-align:center;color: #909090;height:40px;line-height: 40px;margin-top: 10px}
+.wayMenu{margin-top:70px;}
+.wayMenu li{float: left;margin-left:200px;text-align: center;cursor: pointer;}
+.wayMenu li p{position: relative;margin-top: 5px}
+.wayMenu li span.triangle,.wayMenu li span.triangle2{display: none;position: absolute;bottom: -30px;left:38px;width: 0;height: 0;border:13px solid transparent;border-bottom-color: #ddd}
+.wayMenu li span.triangle2{border-bottom-color: #fff;bottom: -31px}
+.wayMenu li i{display: block;width:98px;height: 98px;background:url(../images/ico.gif) no-repeat;}
+.wayMenu li i.email{background-position: 0 0}
+.wayMenu li i.tel{background-position: 0 -102px}
+.wayMenu li.hover span{display: block;}
+.wayMenu li.hover i.email{background-position: -100px 0}
+.wayMenu li.hover i.tel{background-position: -100px -102px}
+.wayMenu li.hover{color: #d72c3c}
+.block{border: 1px solid #e8e8e8;border-radius: 5px;padding:30px;text-align: center;line-height: 50px;margin-top: 30px}
+.way{width: 750px;margin:0 auto;}
+.tip{color:#666;margin-top: 15px;line-height: 22px}
+.telBox{width:350px;margin:0 auto;text-align: left;}
+.telBox input[type='text']{width:338px;height: 35px;line-height: 35px;border: 1px solid #e4e4e4;padding-left: 10px}
+.telBox input.loginBtn{width: 100%;}
+.greyBtn{display: inline-block;padding:5px 20px;line-height:30px;background: #e4e4e4;color: #333;text-decoration: none;}
+.sucess{display:inline-block;width:49px;height: 49px;background: url(../images/tip.png) no-repeat;vertical-align:top;margin-right: 10px}
+.tipBox span{display: inline-block;width: 380px;vertical-align:top;line-height: 35px;margin-top: 10px}
+.tipBox{width: 450px;margin:70px auto;font-size: 18px;}

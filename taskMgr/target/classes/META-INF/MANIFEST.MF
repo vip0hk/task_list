@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Implementation-Title: task
+Implementation-Version: 1.0.0
+Built-By: hk
+Implementation-Vendor-Id: com.hk
+Build-Jdk: 1.8.0_31
+Implementation-URL: http://projects.spring.io/spring-boot/task/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+

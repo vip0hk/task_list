@@ -1,0 +1,320 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="com.hk.task.mapper.MyBatis331Test" time="0.579" tests="3" errors="3" skipped="0" failures="0">
+  <properties>
+    <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
+    <property name="sun.boot.library.path" value="D:\JAVAEE\jdk1.8.0_31\jre\bin"/>
+    <property name="java.vm.version" value="25.31-b07"/>
+    <property name="java.vm.vendor" value="Oracle Corporation"/>
+    <property name="maven.multiModuleProjectDirectory" value="D:\task\task\taskMgr"/>
+    <property name="java.vendor.url" value="http://java.oracle.com/"/>
+    <property name="path.separator" value=";"/>
+    <property name="guice.disable.misplaced.annotation.check" value="true"/>
+    <property name="java.vm.name" value="Java HotSpot(TM) 64-Bit Server VM"/>
+    <property name="file.encoding.pkg" value="sun.io"/>
+    <property name="user.script" value=""/>
+    <property name="user.country" value="CN"/>
+    <property name="sun.java.launcher" value="SUN_STANDARD"/>
+    <property name="sun.os.patch.level" value=""/>
+    <property name="java.vm.specification.name" value="Java Virtual Machine Specification"/>
+    <property name="user.dir" value="D:\task\task\taskMgr"/>
+    <property name="java.runtime.version" value="1.8.0_31-b13"/>
+    <property name="java.awt.graphicsenv" value="sun.awt.Win32GraphicsEnvironment"/>
+    <property name="java.endorsed.dirs" value="D:\JAVAEE\jdk1.8.0_31\jre\lib\endorsed"/>
+    <property name="os.arch" value="amd64"/>
+    <property name="java.io.tmpdir" value="C:\Users\GP-TON~1\AppData\Local\Temp\"/>
+    <property name="line.separator" value="&#10;"/>
+    <property name="java.vm.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.variant" value=""/>
+    <property name="os.name" value="Windows 7"/>
+    <property name="classworlds.conf" value="D:\JAVAEE\workspace\.metadata\.plugins\org.eclipse.m2e.launching\launches\m2conf4341016294522230195.tmp"/>
+    <property name="sun.jnu.encoding" value="GBK"/>
+    <property name="java.library.path" value="D:\JAVAEE\jdk1.8.0_31\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;D:/JAVAEE/jdk1.8.0_31/bin/../jre/bin/server;D:/JAVAEE/jdk1.8.0_31/bin/../jre/bin;D:/JAVAEE/jdk1.8.0_31/bin/../jre/lib/amd64;D:\JAVAEE\maven-3.2.3\bin;.;D:\Python27;D:\JAVAEE\jdk1.8.0_31\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Program Files (x86)\ATI Technologies\ATI.ACE\Core-Static;D:\Program Files\nodejs\;D:\Program Files\TortoiseSVN\bin;D:\Program Files\Git\cmd;C:\Users\gp-tongchao\AppData\Local\Android\Sdk\platform-tools;D:\Program Files (x86)\nmap-7.31;C:\Users\gp-tongchao\AppData\Roaming\npm;C:\Users\gp-tongchao\AppData\Local\.meteor\;C:\Users\gp-tongchao\AppData\Local\atom\bin;D:\Program Files (x86)\Microsoft VS Code\bin;D:\JAVAEE\eclipse;;."/>
+    <property name="java.specification.name" value="Java Platform API Specification"/>
+    <property name="java.class.version" value="52.0"/>
+    <property name="sun.management.compiler" value="HotSpot 64-Bit Tiered Compilers"/>
+    <property name="os.version" value="6.1"/>
+    <property name="user.home" value="C:\Users\gp-tongchao"/>
+    <property name="user.timezone" value="Asia/Shanghai"/>
+    <property name="java.awt.printerjob" value="sun.awt.windows.WPrinterJob"/>
+    <property name="java.specification.version" value="1.8"/>
+    <property name="file.encoding" value="UTF-8"/>
+    <property name="user.name" value="hk"/>
+    <property name="java.class.path" value="/D:/JAVAEE/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.6.3.20160209-1444/jars/plexus-classworlds-2.5.2.jar"/>
+    <property name="java.vm.specification.version" value="1.8"/>
+    <property name="sun.arch.data.model" value="64"/>
+    <property name="java.home" value="D:\JAVAEE\jdk1.8.0_31\jre"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher -B install"/>
+    <property name="java.specification.vendor" value="Oracle Corporation"/>
+    <property name="user.language" value="zh"/>
+    <property name="awt.toolkit" value="sun.awt.windows.WToolkit"/>
+    <property name="java.vm.info" value="mixed mode"/>
+    <property name="java.version" value="1.8.0_31"/>
+    <property name="java.ext.dirs" value="D:\JAVAEE\jdk1.8.0_31\jre\lib\ext;C:\Windows\Sun\Java\lib\ext"/>
+    <property name="sun.boot.class.path" value="D:\JAVAEE\jdk1.8.0_31\jre\lib\resources.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\rt.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\sunrsasign.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\jsse.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\jce.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\charsets.jar;D:\JAVAEE\jdk1.8.0_31\jre\lib\jfr.jar;D:\JAVAEE\jdk1.8.0_31\jre\classes"/>
+    <property name="java.vendor" value="Oracle Corporation"/>
+    <property name="maven.home" value="D:\task\task\taskMgr\EMBEDDED"/>
+    <property name="file.separator" value="\"/>
+    <property name="java.vendor.url.bug" value="http://bugreport.sun.com/bugreport/"/>
+    <property name="sun.cpu.endian" value="little"/>
+    <property name="sun.io.unicode.encoding" value="UnicodeLittle"/>
+    <property name="sun.desktop" value="windows"/>
+    <property name="sun.cpu.isalist" value="amd64"/>
+  </properties>
+  <testcase name="testSelectAll" classname="com.hk.task.mapper.MyBatis331Test" time="0.501">
+    <error message="&#10;### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)&#10;### The error may involve defaultParameterMap&#10;### The error occurred while setting parameters&#10;### SQL: select id, name, state from city&#10;### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist" type="org.springframework.jdbc.BadSqlGrammarException">org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select id, name, state from city
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:141)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy104.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy80.selectList(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectList(SqlSessionTemplate.java:230)
+	at org.apache.ibatis.binding.MapperMethod.executeForMany(MapperMethod.java:137)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:75)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy101.selectAll(Unknown Source)
+	at com.hk.task.mapper.MyBatis331Test.testSelectAll(MyBatis331Test.java:60)
+</error>
+    <system-out><![CDATA[13:38:43.793 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.hk.task.mapper.MyBatis331Test]
+13:38:43.802 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:38:43.817 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:38:43.839 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.hk.task.mapper.MyBatis331Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:38:43.862 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.hk.task.mapper.MyBatis331Test], using SpringBootContextLoader
+13:38:43.869 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.hk.task.mapper.MyBatis331Test]: class path resource [com/hk/task/mapper/MyBatis331Test-context.xml] does not exist
+13:38:43.870 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.hk.task.mapper.MyBatis331Test]: class path resource [com/hk/task/mapper/MyBatis331TestContext.groovy] does not exist
+13:38:43.870 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.hk.task.mapper.MyBatis331Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:38:43.945 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.024 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.hk.task.mapper.MyBatis331Test]: using defaults.
+13:38:44.030 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:38:44.058 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6366ebe0, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@44f75083, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@2698dc7, org.springframework.test.context.support.DirtiesContextTestExecutionListener@43d7741f, org.springframework.test.context.transaction.TransactionalTestExecutionListener@17baae6e, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@69379752, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@27fe3806, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@5f71c76a, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@1d7acb34, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@48a242ce, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@1e4a7dd4, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@4f51b3e0]
+13:38:44.061 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.061 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.064 [main] DEBUG org.springframework.test.context.junit4.SpringJUnit4ClassRunner - SpringJUnit4ClassRunner constructor called with [class com.hk.task.mapper.MyBatis331Test]
+13:38:44.065 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating CacheAwareContextLoaderDelegate from class [org.springframework.test.context.cache.DefaultCacheAwareContextLoaderDelegate]
+13:38:44.065 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating BootstrapContext using constructor [public org.springframework.test.context.support.DefaultBootstrapContext(java.lang.Class,org.springframework.test.context.CacheAwareContextLoaderDelegate)]
+13:38:44.065 [main] DEBUG org.springframework.test.context.BootstrapUtils - Instantiating TestContextBootstrapper for test class [com.hk.task.mapper.MyBatis331Test] from class [org.springframework.boot.test.context.SpringBootTestContextBootstrapper]
+13:38:44.066 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Neither @ContextConfiguration nor @ContextHierarchy found for test class [com.hk.task.mapper.MyBatis331Test], using SpringBootContextLoader
+13:38:44.067 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.hk.task.mapper.MyBatis331Test]: class path resource [com/hk/task/mapper/MyBatis331Test-context.xml] does not exist
+13:38:44.067 [main] DEBUG org.springframework.test.context.support.AbstractContextLoader - Did not detect default resource location for test class [com.hk.task.mapper.MyBatis331Test]: class path resource [com/hk/task/mapper/MyBatis331TestContext.groovy] does not exist
+13:38:44.067 [main] INFO org.springframework.test.context.support.AbstractContextLoader - Could not detect default resource locations for test class [com.hk.task.mapper.MyBatis331Test]: no resource found for suffixes {-context.xml, Context.groovy}.
+13:38:44.074 [main] DEBUG org.springframework.test.context.support.ActiveProfilesUtils - Could not find an 'annotation declaring class' for annotation type [org.springframework.test.context.ActiveProfiles] and class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.077 [main] DEBUG org.springframework.boot.test.context.SpringBootTestContextBootstrapper - @TestExecutionListeners is not present for class [com.hk.task.mapper.MyBatis331Test]: using defaults.
+13:38:44.081 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Loaded default TestExecutionListener class names from location [META-INF/spring.factories]: [org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener, org.springframework.test.context.web.ServletTestExecutionListener, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener, org.springframework.test.context.support.DependencyInjectionTestExecutionListener, org.springframework.test.context.support.DirtiesContextTestExecutionListener, org.springframework.test.context.transaction.TransactionalTestExecutionListener, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener]
+13:38:44.087 [main] INFO org.springframework.boot.test.context.SpringBootTestContextBootstrapper - Using TestExecutionListeners: [org.springframework.test.context.web.ServletTestExecutionListener@6166e06f, org.springframework.test.context.support.DirtiesContextBeforeModesTestExecutionListener@49e202ad, org.springframework.boot.test.autoconfigure.SpringBootDependencyInjectionTestExecutionListener@1c72da34, org.springframework.test.context.support.DirtiesContextTestExecutionListener@6b0c2d26, org.springframework.test.context.transaction.TransactionalTestExecutionListener@3d3fcdb0, org.springframework.test.context.jdbc.SqlScriptsTestExecutionListener@641147d0, org.springframework.boot.test.mock.mockito.ResetMocksTestExecutionListener@6e38921c, org.springframework.boot.test.autoconfigure.web.servlet.MockMvcPrintOnlyOnFailureTestExecutionListener@64d7f7e0, org.springframework.boot.test.autoconfigure.restdocs.RestDocsTestExecutionListener@27c6e487, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverTestExecutionListener@49070868, org.springframework.boot.test.autoconfigure.web.client.MockRestServiceServerResetTestExecutionListener@6385cb26, org.springframework.boot.test.mock.mockito.MockitoTestExecutionListener@38364841]
+13:38:44.087 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.087 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.089 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.089 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.095 [main] DEBUG org.springframework.test.context.support.AbstractDirtiesContextTestExecutionListener - Before test class: context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = [null], testMethod = [null], testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]], class annotated with @DirtiesContext [false] with mode [null].
+13:38:44.096 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved @ProfileValueSourceConfiguration [null] for test class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.096 [main] DEBUG org.springframework.test.annotation.ProfileValueUtils - Retrieved ProfileValueSource type [class org.springframework.test.annotation.SystemProfileValueSource] for class [com.hk.task.mapper.MyBatis331Test]
+13:38:44.218 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemProperties] PropertySource with lowest search precedence
+13:38:44.221 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [systemEnvironment] PropertySource with lowest search precedence
+13:38:44.221 [main] DEBUG org.springframework.core.env.StandardEnvironment - Initialized StandardEnvironment with PropertySources [systemProperties,systemEnvironment]
+13:38:44.224 [main] DEBUG org.springframework.core.env.MutablePropertySources - Adding [inline] PropertySource with highest search precedence
+13:38:44.232 [main] DEBUG org.springframework.test.context.support.TestPropertySourceUtils - Adding inlined properties to environment: {spring.jmx.enabled=false, org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true, server.port=-1}
+13:38:44.233 [main] DEBUG org.springframework.core.env.StandardEnvironment - Adding [Inlined Test Properties] PropertySource with highest search precedence
+
+  .   ____          _            __ _ _
+ /\\ / ___'_ __ _ _(_)_ __  __ _ \ \ \ \
+( ( )\___ | '_ | '_| | '_ \/ _` | \ \ \ \
+ \\/  ___)| |_)| | | | | || (_| |  ) ) ) )
+  '  |____| .__|_| |_|_| |_\__, | / / / /
+ =========|_|==============|___/=/_/_/_/
+ :: Spring Boot ::        (v1.5.1.RELEASE)
+
+2017-04-17 13:38:44.642  INFO 6556 --- [           main] com.hk.task.mapper.MyBatis331Test        : Starting MyBatis331Test on gp-tongchao-PC with PID 6556 (started by hk in D:\task\task\taskMgr)
+2017-04-17 13:38:44.643  INFO 6556 --- [           main] com.hk.task.mapper.MyBatis331Test        : No active profile set, falling back to default profiles: default
+2017-04-17 13:38:44.701  INFO 6556 --- [           main] o.s.w.c.s.GenericWebApplicationContext   : Refreshing org.springframework.web.context.support.GenericWebApplicationContext@1eb5174b: startup date [Mon Apr 17 13:38:44 CST 2017]; root of context hierarchy
+2017-04-17 13:38:46.626  INFO 6556 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration' of type [class org.springframework.boot.autoconfigure.validation.ValidationAutoConfiguration] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-17 13:38:46.746  INFO 6556 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'validator' of type [class org.springframework.validation.beanvalidation.LocalValidatorFactoryBean] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-17 13:38:46.790  INFO 6556 --- [           main] trationDelegate$BeanPostProcessorChecker : Bean 'org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration' of type [class org.springframework.transaction.annotation.ProxyTransactionManagementConfiguration$$EnhancerBySpringCGLIB$$d4aa98e1] is not eligible for getting processed by all BeanPostProcessors (for example: not eligible for auto-proxying)
+2017-04-17 13:38:47.403  INFO 6556 --- [           main] com.alibaba.druid.pool.DruidDataSource   : {dataSource-1} inited
+2017-04-17 13:38:48.002  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/]}" onto java.lang.String com.hk.task.Application.home()
+2017-04-17 13:38:48.005  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/boards/add]}" onto public com.hk.task.model.Board com.hk.task.controller.BoardController.add(com.hk.task.model.Board,javax.servlet.http.HttpSession)
+2017-04-17 13:38:48.006  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/boards/delete/{id}]}" onto public org.springframework.ui.ModelMap com.hk.task.controller.BoardController.delete(java.lang.String)
+2017-04-17 13:38:48.006  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/boards/save],methods=[POST]}" onto public org.springframework.ui.ModelMap com.hk.task.controller.BoardController.save(com.hk.task.model.Board)
+2017-04-17 13:38:48.007  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/boards]}" onto public java.util.List<com.hk.task.model.Board> com.hk.task.controller.BoardController.getByUserId(javax.servlet.http.HttpSession)
+2017-04-17 13:38:48.009  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/login]}" onto public com.hk.task.model.SysUser com.hk.task.controller.IndexController.login(java.lang.String,java.lang.String,javax.servlet.http.HttpSession)
+2017-04-17 13:38:48.009  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/loginUser]}" onto public com.hk.task.model.SysUser com.hk.task.controller.IndexController.getLoginUser(javax.servlet.http.HttpSession)
+2017-04-17 13:38:48.009  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/logout]}" onto public java.util.Map<java.lang.String, java.lang.String> com.hk.task.controller.IndexController.loginout(javax.servlet.http.HttpSession)
+2017-04-17 13:38:48.012  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobs/add]}" onto public com.hk.task.model.JobInfo com.hk.task.controller.JobInfoController.add()
+2017-04-17 13:38:48.013  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobs/delete/{id}]}" onto public org.springframework.ui.ModelMap com.hk.task.controller.JobInfoController.delete(java.lang.String)
+2017-04-17 13:38:48.013  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobs/save],methods=[POST]}" onto public org.springframework.ui.ModelMap com.hk.task.controller.JobInfoController.save(com.hk.task.model.JobInfo)
+2017-04-17 13:38:48.013  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobs/view/{id}]}" onto public com.hk.task.model.JobInfo com.hk.task.controller.JobInfoController.view(java.lang.String)
+2017-04-17 13:38:48.014  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobs/list/{listId}]}" onto public java.util.List<com.hk.task.model.JobInfo> com.hk.task.controller.JobInfoController.getJobsByListId(java.lang.Integer)
+2017-04-17 13:38:48.016  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobBoxs/add]}" onto public com.hk.task.model.JobList com.hk.task.controller.JobListController.add(com.hk.task.model.JobList)
+2017-04-17 13:38:48.017  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/jobBoxs/board/{boardId}]}" onto public java.util.List<com.hk.task.model.JobList> com.hk.task.controller.JobListController.jobLists(java.lang.String)
+2017-04-17 13:38:48.020  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/colors]}" onto public java.util.List<com.hk.task.model.SysColor> com.hk.task.controller.SysColorController.getAll(java.lang.String,java.lang.String)
+2017-04-17 13:38:48.030  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error]}" onto public org.springframework.http.ResponseEntity<java.util.Map<java.lang.String, java.lang.Object>> org.springframework.boot.autoconfigure.web.BasicErrorController.error(javax.servlet.http.HttpServletRequest)
+2017-04-17 13:38:48.030  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerMapping : Mapped "{[/error],produces=[text/html]}" onto public org.springframework.web.servlet.ModelAndView org.springframework.boot.autoconfigure.web.BasicErrorController.errorHtml(javax.servlet.http.HttpServletRequest,javax.servlet.http.HttpServletResponse)
+2017-04-17 13:38:48.091  INFO 6556 --- [           main] o.s.w.s.handler.SimpleUrlHandlerMapping  : Mapped URL path [/static/**] onto handler of type [class org.springframework.web.servlet.resource.ResourceHttpRequestHandler]
+2017-04-17 13:38:48.173  INFO 6556 --- [           main] s.w.s.m.m.a.RequestMappingHandlerAdapter : Looking for @ControllerAdvice: org.springframework.web.context.support.GenericWebApplicationContext@1eb5174b: startup date [Mon Apr 17 13:38:44 CST 2017]; root of context hierarchy
+2017-04-17 13:38:49.625  INFO 6556 --- [           main] o.s.ui.freemarker.SpringTemplateLoader   : SpringTemplateLoader for FreeMarker: using resource loader [org.springframework.web.context.support.GenericWebApplicationContext@1eb5174b: startup date [Mon Apr 17 13:38:44 CST 2017]; root of context hierarchy] and template loader path [classpath:/templates/]
+2017-04-17 13:38:49.626  INFO 6556 --- [           main] o.s.w.s.v.f.FreeMarkerConfigurer         : ClassTemplateLoader for Spring macros added to FreeMarker configuration
+2017-04-17 13:38:49.689  WARN 6556 --- [           main] o.s.b.a.f.FreeMarkerAutoConfiguration    : Cannot find template location(s): [classpath:/templates/] (please add some templates, check your FreeMarker configuration, or set spring.freemarker.checkTemplateLocation=false)
+2017-04-17 13:38:49.969  INFO 6556 --- [           main] com.hk.task.mapper.MyBatis331Test        : Started MyBatis331Test in 5.696 seconds (JVM running for 6.615)
+2017-04-17 13:38:50.111  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@1de9b505, testMethod = testSelectAll@MyBatis331Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@7b122839]; rollback [true]
+2017-04-17 13:38:50.466  INFO 6556 --- [           main] o.s.b.f.xml.XmlBeanDefinitionReader      : Loading XML bean definitions from class path resource [org/springframework/jdbc/support/sql-error-codes.xml]
+2017-04-17 13:38:50.536  INFO 6556 --- [           main] o.s.jdbc.support.SQLErrorCodesFactory    : SQLErrorCodes loaded: [DB2, Derby, H2, HSQL, Informix, MS-SQL, MySQL, Oracle, PostgreSQL, Sybase, Hana]
+2017-04-17 13:38:50.551  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@1de9b505, testMethod = testSelectAll@MyBatis331Test, testException = org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)
+### The error may involve defaultParameterMap
+### The error occurred while setting parameters
+### SQL: select id, name, state from city
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist, mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]].
+]]></system-out>
+  </testcase>
+  <testcase name="testInsertList" classname="com.hk.task.mapper.MyBatis331Test" time="0.063">
+    <error message="&#10;### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;### The error may involve com.hk.task.mapper.MyBatis331Mapper.insertCities-Inline&#10;### The error occurred while setting parameters&#10;### SQL: insert into city (id, name, state) values   (?, ?, ?) , (?, ?, ?) , (?, ?, ?)&#10;### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist" type="org.springframework.jdbc.BadSqlGrammarException">org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may involve com.hk.task.mapper.MyBatis331Mapper.insertCities-Inline
+### The error occurred while setting parameters
+### SQL: insert into city (id, name, state) values   (?, ?, ?) , (?, ?, ?) , (?, ?, ?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.update(PreparedStatementHandler.java:46)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.update(RoutingStatementHandler.java:74)
+	at org.apache.ibatis.executor.SimpleExecutor.doUpdate(SimpleExecutor.java:50)
+	at org.apache.ibatis.executor.BaseExecutor.update(BaseExecutor.java:117)
+	at org.apache.ibatis.executor.CachingExecutor.update(CachingExecutor.java:76)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:63)
+	at com.sun.proxy.$Proxy104.update(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.update(DefaultSqlSession.java:198)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.insert(DefaultSqlSession.java:185)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy80.insert(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.insert(SqlSessionTemplate.java:278)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:57)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy101.insertCities(Unknown Source)
+	at com.hk.task.mapper.MyBatis331Test.testInsertList(MyBatis331Test.java:42)
+</error>
+    <system-out><![CDATA[2017-04-17 13:38:50.575  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@11c3ff67, testMethod = testInsertList@MyBatis331Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@7b122839]; rollback [true]
+2017-04-17 13:38:50.635  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@11c3ff67, testMethod = testInsertList@MyBatis331Test, testException = org.springframework.jdbc.BadSqlGrammarException: 
+### Error updating database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may involve com.hk.task.mapper.MyBatis331Mapper.insertCities-Inline
+### The error occurred while setting parameters
+### SQL: insert into city (id, name, state) values   (?, ?, ?) , (?, ?, ?) , (?, ?, ?)
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist, mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]].
+]]></system-out>
+  </testcase>
+  <testcase name="testSelectById" classname="com.hk.task.mapper.MyBatis331Test" time="0.015">
+    <error message="&#10;### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)&#10;### The error may involve com.hk.task.mapper.MyBatis331Mapper.selectByCityId-Inline&#10;### The error occurred while setting parameters&#10;### SQL: select id, name, state from city where id = ?&#10;### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist&#10;; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table &apos;task_db.city&apos; doesn&apos;t exist" type="org.springframework.jdbc.BadSqlGrammarException">org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)
+### The error may involve com.hk.task.mapper.MyBatis331Mapper.selectByCityId-Inline
+### The error occurred while setting parameters
+### SQL: select id, name, state from city where id = ?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:408)
+	at com.mysql.jdbc.Util.handleNewInstance(Util.java:425)
+	at com.mysql.jdbc.Util.getInstance(Util.java:408)
+	at com.mysql.jdbc.SQLError.createSQLException(SQLError.java:943)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3970)
+	at com.mysql.jdbc.MysqlIO.checkErrorPacket(MysqlIO.java:3906)
+	at com.mysql.jdbc.MysqlIO.sendCommand(MysqlIO.java:2524)
+	at com.mysql.jdbc.MysqlIO.sqlQueryDirect(MysqlIO.java:2677)
+	at com.mysql.jdbc.ConnectionImpl.execSQL(ConnectionImpl.java:2549)
+	at com.mysql.jdbc.PreparedStatement.executeInternal(PreparedStatement.java:1861)
+	at com.mysql.jdbc.PreparedStatement.execute(PreparedStatement.java:1192)
+	at com.alibaba.druid.pool.DruidPooledPreparedStatement.execute(DruidPooledPreparedStatement.java:493)
+	at org.apache.ibatis.executor.statement.PreparedStatementHandler.query(PreparedStatementHandler.java:63)
+	at org.apache.ibatis.executor.statement.RoutingStatementHandler.query(RoutingStatementHandler.java:79)
+	at org.apache.ibatis.executor.SimpleExecutor.doQuery(SimpleExecutor.java:63)
+	at org.apache.ibatis.executor.BaseExecutor.queryFromDatabase(BaseExecutor.java:324)
+	at org.apache.ibatis.executor.BaseExecutor.query(BaseExecutor.java:156)
+	at org.apache.ibatis.executor.CachingExecutor.query(CachingExecutor.java:109)
+	at com.github.pagehelper.PageInterceptor.intercept(PageInterceptor.java:141)
+	at org.apache.ibatis.plugin.Plugin.invoke(Plugin.java:61)
+	at com.sun.proxy.$Proxy104.query(Unknown Source)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:148)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectList(DefaultSqlSession.java:141)
+	at org.apache.ibatis.session.defaults.DefaultSqlSession.selectOne(DefaultSqlSession.java:77)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:483)
+	at org.mybatis.spring.SqlSessionTemplate$SqlSessionInterceptor.invoke(SqlSessionTemplate.java:433)
+	at com.sun.proxy.$Proxy80.selectOne(Unknown Source)
+	at org.mybatis.spring.SqlSessionTemplate.selectOne(SqlSessionTemplate.java:166)
+	at org.apache.ibatis.binding.MapperMethod.execute(MapperMethod.java:82)
+	at org.apache.ibatis.binding.MapperProxy.invoke(MapperProxy.java:59)
+	at com.sun.proxy.$Proxy101.selectByCityId(Unknown Source)
+	at com.hk.task.mapper.MyBatis331Test.testSelectById(MyBatis331Test.java:51)
+</error>
+    <system-out><![CDATA[2017-04-17 13:38:50.643  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Began transaction (1) for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@506a1372, testMethod = testSelectById@MyBatis331Test, testException = [null], mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]]; transaction manager [org.springframework.jdbc.datasource.DataSourceTransactionManager@7b122839]; rollback [true]
+2017-04-17 13:38:50.652  INFO 6556 --- [           main] o.s.t.c.transaction.TransactionContext   : Rolled back transaction for test context [DefaultTestContext@7bc1a03d testClass = MyBatis331Test, testInstance = com.hk.task.mapper.MyBatis331Test@506a1372, testMethod = testSelectById@MyBatis331Test, testException = org.springframework.jdbc.BadSqlGrammarException: 
+### Error querying database.  Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+### The error may exist in com/hk/task/mapper/MyBatis331Mapper.java (best guess)
+### The error may involve com.hk.task.mapper.MyBatis331Mapper.selectByCityId-Inline
+### The error occurred while setting parameters
+### SQL: select id, name, state from city where id = ?
+### Cause: com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist
+; bad SQL grammar []; nested exception is com.mysql.jdbc.exceptions.jdbc4.MySQLSyntaxErrorException: Table 'task_db.city' doesn't exist, mergedContextConfiguration = [WebMergedContextConfiguration@70b0b186 testClass = MyBatis331Test, locations = '{}', classes = '{class com.hk.task.Application, class com.hk.task.Application}', contextInitializerClasses = '[]', activeProfiles = '{}', propertySourceLocations = '{}', propertySourceProperties = '{org.springframework.boot.test.context.SpringBootTestContextBootstrapper=true}', contextCustomizers = set[org.springframework.boot.test.context.SpringBootTestContextCustomizer@3d99d22e, org.springframework.boot.test.context.filter.ExcludeFilterContextCustomizer@3a883ce7, org.springframework.boot.test.mock.mockito.MockitoContextCustomizer@0, org.springframework.boot.test.autoconfigure.properties.PropertyMappingContextCustomizer@0, org.springframework.boot.test.autoconfigure.web.servlet.WebDriverContextCustomizerFactory$Customizer@6895a785, org.springframework.test.context.web.socket.MockServerContainerContextCustomizer@1f7030a6], resourceBasePath = 'src/main/webapp', contextLoader = 'org.springframework.boot.test.context.SpringBootContextLoader', parent = [null]]].
+]]></system-out>
+  </testcase>
+</testsuite>
