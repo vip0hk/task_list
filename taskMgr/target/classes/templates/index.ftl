@@ -10,7 +10,7 @@
 
 <body>
 <div ng-show="isLogined" ng-controller="AppController" class="top">
-	<div class="topIn">任务管理系统<span>任务看板</span> <span style="margin-left: 300px;" >欢迎 <strong ng-bind="user.userName" ></strong> 登录</span>
+	<div class="topIn">任务管理系统<span><a ui-sref="boards" style="text-decoration: none;">任务看板</a></span> <span style="margin-left: 300px;" >欢迎 <strong ng-bind="user.userName" ></strong> 登录</span>
 	<a class="loginBtn" style="float: right; " href="javascript:;" ng-click="logout()" >退出</a></div>
 </div>
 	
