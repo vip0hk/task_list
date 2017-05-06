@@ -40,8 +40,9 @@ a.refresh:hover{background-position:5px -22px}
 .top{background: url(../images/topBg.gif);border-bottom: 1px solid #d2d2d2;height: 40px;padding-top: 10px}
 .topIn{background: url(../images/logo.png) no-repeat;background-size:background-size: 50% auto;padding-left:100px;font:bold 23px 'microsoft yahei';color: #494949;padding-top: 0px;height: 30px;width: 1000px;margin:0 auto;}
 .topIn span{font-weight: normal;display: inline-block;border-left: 1px solid #c4c4c4;padding-left: 20px;margin-left: 20px}
-.wrap{width:1200px;margin:0 auto;}
-.box{border: 1px solid #dcdcdc;padding:30px; width: 100%; height: 430px; overflow-x: auto;}
+.wrap{width:99%;margin:0 auto;}
+.box{/* border: 1px solid #dcdcdc;  */width: 100%; /*调整任务区高度*/height: 540px; overflow-x: auto;margin-left:7px}
+
 h2.title{font-size: 25px;font-weight:normal;color: #6a6a6a}
 .boxIn{width: 380px;margin:50px auto;}
 .addForm li{padding:15px 0;position: relative;}
@@ -52,7 +53,7 @@ h2.title{font-size: 25px;font-weight:normal;color: #6a6a6a}
 .addForm li .verify .refresh{height: 44px}
 .addForm li .greyBtn{position: absolute;right: 2px;top:19px;padding:5px 10px;line-height: 29px}
 .btnBox{text-align: center;margin-top: 30px}
-.footer{background: #0f0f0f;text-align:center;color: #909090;height:40px;line-height: 40px;margin-top: 10px}
+.footer{background: #0f0f0f;text-align:center;color: #909090;height:40px;line-height: 40px;position: fixed;bottom: 0; width:100%;z-index: 999;}
 .wayMenu{margin-top:70px;}
 .wayMenu li{float: left;margin-left:200px;text-align: center;cursor: pointer;}
 .wayMenu li p{position: relative;margin-top: 5px}

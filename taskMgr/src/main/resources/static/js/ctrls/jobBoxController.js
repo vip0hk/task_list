@@ -17,6 +17,7 @@ jobBoxModule.controller('JobBoxController',
 					'boardId':boardId,	
 				};
 		
+		// 取全部的job列表及jobinfo
 		function init(){
 			$http.get(getUrl() + '/jobBoxs/board/'+boardId)
 	        .success(function(result){
@@ -27,6 +28,7 @@ jobBoxModule.controller('JobBoxController',
 	        })
 		}
 		
+		// 取全部的job列表及jobinfo
 		init();
 		
 		/** 排序后 */
@@ -100,6 +102,7 @@ jobBoxModule.controller('JobBoxController',
 	        .success(function(result){
 	        	
 	            if(result){
+	            	// 取全部的job列表及jobinfo
 	                init();
 	                $scope.jobBox.listTitle='';
 	            }
@@ -108,16 +111,34 @@ jobBoxModule.controller('JobBoxController',
 		
 		$scope.newJob = {'jobTitle':'', 'jobDesc':''};
 		
+		// 添加新的jobinfo
 		$scope.saveJob = function() {
 			
 			$http.post(getUrl() + '/jobs/add', $scope.newJob)
 	        .success(function(result){
 	        	
 	            if(result){
-	            	$scope.isShowWin = false;
+	            	// 取全部的job列表及jobinfo
 	                init();
+	                $scope.isShowWin = false;
+	                $scope.isShowWinMin = false;
 	            }
 	        });
+		}
+		
+		
+		/** 显示新增画面Min */
+		$scope.showNewWinMin = function(listId) {
+			$scope.isShowWinMin = true;
+			$scope.listIdShow = listId;
+			$scope.newJob.listId = listId;
+			$scope.newJob.jobId = '';
+			$scope.newJob.jobTitle = '';
+			$scope.newJob.jobDesc = '';
+		};
+		
+		$scope.closeNewWinMin = function(){
+			$scope.isShowWinMin = false;
 		}
 		
 }]);

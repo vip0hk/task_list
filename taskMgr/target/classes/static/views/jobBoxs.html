@@ -48,7 +48,23 @@
 					<!--/工作卡片-->
 
 				</div>
-				<a class="open-card-composer js-open-card-composer" href="javascript:;" ng-click="showNewWin(jobBox.listId)">添加新卡片...</a>
+				<a class="open-card-composer js-open-card-composer" href="javascript:;" ng-click="showNewWinMin(jobBox.listId)">添加新卡片...</a>
+				
+				
+			<!-- 新增 -->
+				<div class="quick-card-editor-card" ng-if="isShowWinMin && listIdShow==jobBox.listId" style="width: 254px;">
+				<div class="list-card list-card-quick-edit js-stop" style="width: 254px;">
+					<div class="list-card-details">
+						<textarea class="list-card-edit-title js-edit-card-title" 
+							style="overflow: hidden; word-wrap: break-word; resize: none; height: 90px;" placeholder="任务描述"
+							ng-model="newJob.jobDesc"></textarea>
+				</div>
+					</div>
+					<input class="primary wide js-save-edits" type="submit" ng-click="saveJob()" value="保存">
+					<a class="icon-lg icon-close dark-hover js-cancel-edit" ng-click="closeNewWinMin()" href="javascript:;"></a>
+				</div>
+				<!--/ 新增 -->
+				
 			</div>
 		</div>
 

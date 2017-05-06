@@ -28,7 +28,7 @@
 		<script type="text/javascript" src="js/ctrls/loginController.js" ></script>
 		<script type="text/javascript" src="js/ctrls/leftController.js" ></script>
 		<script type="text/javascript" src="js/ctrls/boardController.js" ></script>
-		<script type="text/javascript" src="js/lib/angular-sortable-view.min.js" ></script>
+		<script type="text/javascript" src="js/lib/angular-sortable-view.js" ></script>
 		<script type="text/javascript" src="js/ctrls/jobBoxController.js" ></script>
 		
 </body>

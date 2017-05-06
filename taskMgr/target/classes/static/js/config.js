@@ -1,4 +1,4 @@
 
 function getUrl(){
-	return "";
+	return "/task";
 }
