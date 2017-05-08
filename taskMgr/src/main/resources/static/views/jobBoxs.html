@@ -2,8 +2,7 @@
 	<div class="box" style="margin-top: 30px;">
 
 		<!-- 里面可拖拽 -->
-		<div style="width: 2000px;" sv-root sv-on-sort="onSorted($item, $partFrom, $partTo, $indexFrom, $indexTo)" 
-		sv-on-start="onStarted($index, $item, $helper, $part)">
+		<div ng-sortable="sortableConfig" style="width: 2000px;" id="multi" >
 
 			<!--第一列-->
 			<div class="js-list list-wrapper" ng-repeat="jobBox in jobBoxs">
@@ -23,10 +22,10 @@
 					</div>
 
 					<!-- 卡片列表-->
-					<div sv-part="jobBox.jobs" class="list-cards u-fancy-scrollbar u-clearfix ">
+					<div ng-sortable="sortableConfig" class="list-cards u-fancy-scrollbar u-clearfix ">
 
 						<!--工作卡片-->
-						<div class="list-card" ng-repeat="item in jobBox.jobs" sv-element>
+						<div class="list-card" ng-repeat="item in jobBox.jobs" >
 							<div class="list-card-details">
 							<a class="list-card-title js-card-name" dir="auto" href="javascript:;" ng-click="showEditWin(item)" >
 									<span class="card-short-id hide">#7</span><h3>{{item.jobTitle}}</h3></a>

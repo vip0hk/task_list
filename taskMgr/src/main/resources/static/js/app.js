@@ -1,6 +1,6 @@
 var taskApp = angular.module('taskApp', ['ui.router','appModule','loginModule',
-                                         'leftModule', 'boardModule','jobBoxModule',
-                                         'angular-sortable-view']);
+                                         'leftModule', 'boardModule','jobBoxModule'
+                                         ]);
 
 /**
  * 由于整个应用都会和路由打交道，所以这里把$state和$stateParams这两个对象放到$rootScope上，方便其它地方引用和注入。

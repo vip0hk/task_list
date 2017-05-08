@@ -22,13 +22,14 @@
 
 		<script type="text/javascript" src="js/lib/angular.js" ></script>
 		<script type="text/javascript" src="js/lib/angular-ui-router.js" ></script>
+		<script type="text/javascript" src="js/lib/Sortable.js" ></script>
+		<script type="text/javascript" src="js/lib/angular-legacy-sortable.js" ></script>
 		<script type="text/javascript" src="js/config.js" ></script>
 		<script type="text/javascript" src="js/app.js" ></script>
 		<script type="text/javascript" src="js/ctrls/appController.js" ></script>
 		<script type="text/javascript" src="js/ctrls/loginController.js" ></script>
 		<script type="text/javascript" src="js/ctrls/leftController.js" ></script>
 		<script type="text/javascript" src="js/ctrls/boardController.js" ></script>
-		<script type="text/javascript" src="js/lib/angular-sortable-view.js" ></script>
 		<script type="text/javascript" src="js/ctrls/jobBoxController.js" ></script>
 		
 </body>

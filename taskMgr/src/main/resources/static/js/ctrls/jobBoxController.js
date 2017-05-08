@@ -1,6 +1,7 @@
-var jobBoxModule = angular.module("jobBoxModule", []);
+var jobBoxModule = angular.module("jobBoxModule", ['ng-sortable']);
 
 var pF =[];
+
 /** 登录 */
 jobBoxModule.controller('JobBoxController', 
 	['$scope', '$http', '$state','$location', '$stateParams', '$rootScope', 
@@ -30,6 +31,69 @@ jobBoxModule.controller('JobBoxController',
 		
 		// 取全部的job列表及jobinfo
 		init();
+		
+		
+		
+		
+		
+		
+		
+//		$scope.todos = [
+//						{text: 'right1', done: true,groupId:1},
+//						{text: 'right2', done: false,groupId:1},
+//						{text: 'right3', done: false,groupId:1}
+//					];
+
+					$scope.sortableConfig = { group: 'todo', animation: 150 ,
+
+					// 1,移除当前元素
+					onRemove:function(item){
+						console.log(item)
+						$scope.todos.splice(item.oldIndex,1);
+					},
+
+					// 2,从别的组添加过来
+					onAdd:function(item){
+						console.log('Add')
+						console.log(item)
+						console.log('从哪来：' + item.model.groupId+'谁：' +item.model.text)
+
+						var toGId;
+						$scope.todos.forEach(function(ele,index){
+							if (index != item.newIndex) {
+								toGId = ele.groupId;
+								return false;
+							}
+						});
+						console.log('到哪去：'+ toGId + '位置：' + item.newIndex)
+					},
+
+					// 3,自身的排序
+					onSort(item){
+						console.log('自身排序：'+item.model.groupId+'old:'+item.oldIndex +'new:'+item.newIndex)
+					}
+
+				};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		/** 排序后 */
 		$scope.onSorted = function($item, $partFrom, $partTo, $indexFrom, $indexTo) {
@@ -67,6 +131,29 @@ jobBoxModule.controller('JobBoxController',
 			pF = $part;
 			console.log(arguments);
 		};
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		/** 显示新增画面 */
 		$scope.showNewWin = function(listId) {
