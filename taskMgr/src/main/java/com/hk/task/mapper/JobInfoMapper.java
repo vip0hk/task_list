@@ -13,7 +13,11 @@ public interface JobInfoMapper extends MyMapper<JobInfo> {
 	
 	int selectMaxSortValue(int listId);
 	
-	int updateSortById(@Param("jobId")int jobId, @Param("sortValue")int sortValue,@Param("listId")int listId);
-	int updateSortsBySortValue(@Param("listId")int listId, @Param("sortValue")int sortValue);
-	int updateSortsById(@Param("listId") int listId, @Param("jobSort")int jobSort);
+//	int updateSortById(@Param("jobId")int jobId, @Param("sortValue")int sortValue,@Param("listId")int listId);
+//	int updateSortsBySortValue(@Param("listId")int listId, @Param("sortValue")int sortValue);
+//	int updateSortsById(@Param("listId") int listId, @Param("jobSort")int jobSort);
+	
+	
+	int updateListId(@Param("oldJobId") int oldJobId,@Param("toListId") int toListId);
+	int updateSort(JobInfo jobInfo);
 }

@@ -39,7 +39,7 @@
 
 	</select>
 	
-	<update id="updateSortById">
+<!-- 	<update id="updateSortById">
 		update job_info
 		set job_sort = #{sortValue}, list_id = #{listId}
 		where job_id = #{jobId}
@@ -55,6 +55,16 @@
 		update job_info
 		set job_sort = job_sort -1
 		where job_sort > #{jobSort} and list_id=#{listId}
+	</update> -->
+	
+	<update id="updateListId">
+		update job_info set list_id = #{toListId}
+		where job_id = #{oldJobId}
+	</update>
+
+	<update id="updateSort">
+		update job_info set job_sort = #{jobSort}
+		where job_id = #{jobId}
 	</update>
 
 

@@ -2,13 +2,13 @@
 	<div class="box" style="margin-top: 30px;">
 
 		<!-- 里面可拖拽 -->
-		<div ng-sortable="sortableConfig" style="width: 2000px;" id="multi" >
+		<div ng-sortable="listConfig" style="width: 2000px;" id="multi" >
 
 			<!--第一列-->
 			<div class="js-list list-wrapper" ng-repeat="jobBox in jobBoxs">
 				<div class="list js-list-content">
 					<!-- 标题-->
-					<div class="list-header js-list-header u-clearfix is-menu-shown">
+					<div class="list-handle list-header js-list-header u-clearfix is-menu-shown">
 						<div class="list-header-target js-editing-target"></div>
 						<h2 class="list-header-name-assist js-list-name-assist" ng-bind="jobBox.listTitle">卡片列表</h2>
 						<textarea class="list-header-name mod-list-name js-list-name-input" spellcheck="false"  maxlength="512" 
@@ -68,7 +68,7 @@
 		</div>
 
 		<!-- 创建新列表 -->
-		<div class="js-add-list list-wrapper mod-add is-idle">
+		<div class="ignore-ele js-add-list list-wrapper mod-add is-idle">
 			<span class="placeholder js-open-add-list">创建列表…</span>
 			<input type="text" ng-model="jobBox.listTitle" placeholder="名称…" autocomplete="off" maxlength="512">
 			<div class="u-clearfix">

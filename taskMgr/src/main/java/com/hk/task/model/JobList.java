@@ -12,11 +12,22 @@ public class JobList {
 
     @Column(name = "list_title")
     private String listTitle;
+    
+    @Column(name = "list_sort")
+    private Integer listSort;
 
     @Column(name = "board_id")
     private String boardId;
     
-    @Transient
+    public Integer getListSort() {
+		return listSort;
+	}
+
+	public void setListSort(Integer listSort) {
+		this.listSort = listSort;
+	}
+
+	@Transient
     private List<JobInfo> jobs;
     
     public List<JobInfo> getJobs() {

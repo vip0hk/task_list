@@ -26,16 +26,6 @@ public class JobInfoService {
     	return jobInfoMapper.selectMaxSortValue(listId);
     }
     
-    public boolean updateSorts(int jobId,int listFrom,int listTo,int from,int to){
-    	
-    	// 1，把listFrom的from后面排序全部-1
-    	// 2, 把listTo的to后面排序全部+1
-    	int v2 = jobInfoMapper.updateSortsById(listFrom, from);
-    	int v3 = jobInfoMapper.updateSortsBySortValue(listTo,to);
-    	int v1 = jobInfoMapper.updateSortById(jobId, to, listTo);
-    	return v1 >0 && v2 >0 && v3 > 0;
-    }
-    
     public JobInfo getById(String id) {
         return jobInfoMapper.selectByPrimaryKey(id);
     }
@@ -50,6 +40,15 @@ public class JobInfoService {
         } else {
         	jobInfoMapper.insert(jobInfo);
         }
+    }
+    
+    public boolean move2NewJobBox(int oldJobId, int toListId){
+    	int row = jobInfoMapper.updateListId(oldJobId,toListId);
+    	return row > 0;
+    }
+    public boolean updateSort(JobInfo jobInfo){
+    	int row = jobInfoMapper.updateSort(jobInfo);
+    	return row > 0;
     }
 
 }

@@ -8,4 +8,6 @@ import com.hk.task.util.MyMapper;
 public interface JobListMapper extends MyMapper<JobList> {
 	
 	List<JobList> selectByBoardId(String boardId);
+	
+	int updateSort(JobList jobLists);
 }

@@ -1,5 +1,6 @@
 package com.hk.task.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -11,8 +12,11 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 import com.hk.task.model.JobInfo;
 import com.hk.task.service.JobInfoService;
+import com.hk.task.util.GsonUtils;
 
 @RestController
 @RequestMapping("/jobs")
@@ -40,12 +44,46 @@ public class JobInfoController {
     	jobInfoService.save(newJob);
         return new JobInfo();
     }
+    
+    @RequestMapping(value = "/sort2")
+    public Map<String, Boolean> updateSort2(int oldJobId, int toListId, String toList) {
+    	
+    	Gson gson = GsonUtils.build();
+    	List<JobInfo> jobInfos = gson.fromJson(toList, new TypeToken<ArrayList<JobInfo>>() {}.getType());
+    	
+    	// 1,移动到新的列表
+    	jobInfoService.move2NewJobBox(oldJobId, toListId);
+    	
+    	JobInfo jobInfo = null;
+    	for (int i = 0,len = jobInfos.size(); i < len; i++) {
+			jobInfo = jobInfos.get(i);
+			jobInfo.setJobSort(i);
+			jobInfoService.updateSort(jobInfo);
+			
+		}
 
-    @RequestMapping(value = "/sort")
-    public Map<String, Boolean> updateSort(int jobId,int listFrom,int listTo,int from,int to) {
-    	Boolean sorted = jobInfoService.updateSorts(jobId,listFrom,listTo,from,to);
     	Map<String, Boolean> result = new HashMap<String, Boolean>();
-    	result.put("result", sorted);
+    	result.put("result", true);
+    	return result;
+    }
+    
+    @RequestMapping(value = "/sort3")
+    public Map<String, Boolean> updateSort3(String fromList) {
+    	
+    	Gson gson = GsonUtils.build();
+    	List<JobInfo> jobInfos = gson.fromJson(fromList, new TypeToken<ArrayList<JobInfo>>() {}.getType());
+    	
+    	// 内部排序
+    	JobInfo jobInfo = null;
+    	for (int i = 0,len = jobInfos.size(); i < len; i++) {
+			jobInfo = jobInfos.get(i);
+			jobInfo.setJobSort(i);
+			jobInfoService.updateSort(jobInfo);
+			
+		}
+
+    	Map<String, Boolean> result = new HashMap<String, Boolean>();
+    	result.put("result", true);
     	return result;
     }
     

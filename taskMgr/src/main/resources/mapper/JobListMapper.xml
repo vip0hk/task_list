@@ -9,7 +9,7 @@
 	</resultMap>
 
 	<sql id="Base_Column_List">
-		list_id, list_title, board_id
+		list_id, list_title, list_sort, board_id
 	</sql>
 
 	<select id="selectByBoardId" parameterType="java.lang.String"
@@ -20,8 +20,14 @@
 		<where>
 			board_id = #{boardId}
 		</where>
+		order by list_sort
 
 	</select>
+
+	<update id="updateSort">
+		update job_list set list_sort = #{listSort}
+		 where list_id = #{listId}
+	</update>
 
 
 </mapper>

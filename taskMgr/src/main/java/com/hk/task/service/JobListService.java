@@ -21,5 +21,10 @@ public class JobListService {
     public void save(JobList jobList) {
         jobListMapper.insert(jobList);
     }
+    
+    public boolean updateSort(JobList jobLists){
+    	int row = jobListMapper.updateSort(jobLists);
+    	return row > 0;
+    }
   
 }

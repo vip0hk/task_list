@@ -1,7 +1,5 @@
 var jobBoxModule = angular.module("jobBoxModule", ['ng-sortable']);
 
-var pF =[];
-
 /** 登录 */
 jobBoxModule.controller('JobBoxController', 
 	['$scope', '$http', '$state','$location', '$stateParams', '$rootScope', 
@@ -33,126 +31,83 @@ jobBoxModule.controller('JobBoxController',
 		init();
 		
 		
+		// 列表的排序
+		$scope.listConfig = { group: 'list', animation: 150 ,handle: ".list-handle",
+
+			// 触发排序
+				onEnd:function(item){
+//					console.log('被移动之后')
+					
+					var param = {
+						'list':angular.toJson(item.models)
+					};
+					
+					$http.post(getUrl() + '/jobBoxs/sort1', param)
+			        .success(function(result){
+			        });
+					
+//					console.log(item)
+				}
+		};
 		
-		
-		
-		
-		
-//		$scope.todos = [
-//						{text: 'right1', done: true,groupId:1},
-//						{text: 'right2', done: false,groupId:1},
-//						{text: 'right3', done: false,groupId:1}
-//					];
+		// 每个任务项目的排序
+		$scope.sortableConfig = { group: 'job', animation: 150 ,
 
-					$scope.sortableConfig = { group: 'todo', animation: 150 ,
-
-					// 1,移除当前元素
-					onRemove:function(item){
-						console.log(item)
-						$scope.todos.splice(item.oldIndex,1);
-					},
-
-					// 2,从别的组添加过来
-					onAdd:function(item){
-						console.log('Add')
-						console.log(item)
-						console.log('从哪来：' + item.model.groupId+'谁：' +item.model.text)
-
-						var toGId;
-						$scope.todos.forEach(function(ele,index){
-							if (index != item.newIndex) {
-								toGId = ele.groupId;
-								return false;
-							}
-						});
-						console.log('到哪去：'+ toGId + '位置：' + item.newIndex)
-					},
-
-					// 3,自身的排序
-					onSort(item){
-						console.log('自身排序：'+item.model.groupId+'old:'+item.oldIndex +'new:'+item.newIndex)
-					}
-
+			// 1,移除当前元素
+			onRemove:function(item){
+				item.models.splice(item.oldIndex,1);
+			},
+			
+			// 2,从别的组添加过来
+			onAdd:function(item){
+				console.log('被添加之后')
+				console.log(item)
+				
+				// 哪个工作
+				var oldJobId = item.model.jobId;
+				
+				// 移动到哪个列表
+				var toListId;
+				item.models.forEach(function(ele,index){
+			 		if (index != item.newIndex) {
+			 			toListId = ele.listId;
+			 			return false;
+			 		}
+			 	});
+				
+				// 移动之后的列表
+				var toList = item.models;
+				var param = {
+					'oldJobId':oldJobId,
+					'toListId':toListId,
+					'toList':angular.toJson(toList)
 				};
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		/** 排序后 */
-		$scope.onSorted = function($item, $partFrom, $partTo, $indexFrom, $indexTo) {
-			console.log('排之后：');
-			console.log($item);
-			console.log($partFrom);
-			console.log($partTo);
-			console.log($indexFrom);
-			console.log($indexTo);
-			var listTo;
-			if($indexTo === 0 ){
-				listTo = $partTo[1].listId;
-			}else{
-				listTo = $partTo[0].listId;
+				
+				$http.post(getUrl() + '/jobs/sort2', param)
+		        .success(function(result){
+		        });
+				
+			},
+			
+			// 3,触发排序
+			onEnd:function(item){
+				console.log('被移动之后')
+//				item.model.listId;
+//				item.models
+				
+				var param = {
+					'fromList':angular.toJson(item.models)
+				};
+				
+				$http.post(getUrl() + '/jobs/sort3', param)
+		        .success(function(result){
+		        });
+				
+//				console.log(item)
 			}
-			var param = {'jobId':$item.jobId,
-						'listFrom':pF[0].listId,
-						'listTo':listTo,
-						'from':$indexFrom + 1,
-						'to':$indexTo + 1};
-			$http.post(getUrl() + '/jobs/sort', param)
-	        .success(function(result){
-	        	
-//	            if(result){
-//	                init();
-//	            }
-	        });
+	
+			
 		};
-		
-//		var pF = [];
-
-		/** 开始排序 */
-		$scope.onStarted = function($index, $item, $helper, $part) {
-			console.log('开始：');
-			pF = $part;
-			console.log(arguments);
-		};
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
 		
 		
 		/** 显示新增画面 */
