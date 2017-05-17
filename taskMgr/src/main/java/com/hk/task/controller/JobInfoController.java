@@ -42,7 +42,13 @@ public class JobInfoController {
     	int maxSortValue = jobInfoService.getMaxSortValue(newJob.getListId());
     	newJob.setJobSort(maxSortValue + 1);
     	jobInfoService.save(newJob);
-        return new JobInfo();
+        return newJob;
+    }
+    
+    @RequestMapping(value = "/update")
+    public JobInfo update(JobInfo newJob) {
+    	jobInfoService.save(newJob);
+        return newJob;
     }
     
     @RequestMapping(value = "/sort2")

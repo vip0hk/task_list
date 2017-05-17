@@ -168,6 +168,21 @@ jobBoxModule.controller('JobBoxController',
 	        });
 		}
 		
+		// 更新jobinfo
+		$scope.updateJob = function() {
+			
+			$http.post(getUrl() + '/jobs/update', $scope.newJob)
+	        .success(function(result){
+	        	
+	            if(result){
+	            	// 取全部的job列表及jobinfo
+	                init();
+	                $scope.isShowWin = false;
+	                $scope.isShowWinMin = false;
+	            }
+	        });
+		}
+		
 		
 		/** 显示新增画面Min */
 		$scope.showNewWinMin = function(listId) {

@@ -1,8 +1,8 @@
-<div class="wrap" ng-controller="JobBoxController">
-	<div class="box" style="margin-top: 30px;">
+<div class="wrap" ng-controller="JobBoxController" style="height:calc(100% - 40px)">
+	<div class="box" style="margin-top: 30px;height:100%;overflow-y: hidden;">
 
 		<!-- 里面可拖拽 -->
-		<div ng-sortable="listConfig" style="width: 2000px;" id="multi" >
+		<div ng-sortable="listConfig" style="width: 2000px;height:100%" >
 
 			<!--第一列-->
 			<div class="js-list list-wrapper" ng-repeat="jobBox in jobBoxs">
@@ -146,7 +146,7 @@
 								</div> -->
 								<p class="u-bottom">
 									<a class="quiet-button mod-with-image hide-on-edit js-edit-desc js-hide-with-desc " href="javascript:;"
-									ng-click="saveJob()">
+									ng-click="updateJob()">
 									<span class="icon-sm icon-description quiet-button-icon"></span>&nbsp;调整内容…</a>
 								</p>
 								<!-- <div class="card-detail-edit edit">

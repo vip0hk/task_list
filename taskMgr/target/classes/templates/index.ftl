@@ -16,7 +16,7 @@
 	
 	<!-- 变更主体 -->
 	<div ui-view="left" ></div>
-	<div ui-view="main" ></div>
+	<div ui-view="main" style="height:calc(100% - 81px)" ></div>
 
 <div class="footer">版权所有 &copy; 2017 </div>
 
